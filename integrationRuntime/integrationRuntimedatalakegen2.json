@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntimedatalakegen2",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
