@@ -1,0 +1,16 @@
+{
+	"name": "MySql_LOCAL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MySql",
+		"typeProperties": {
+			"connectionString": "server=PB-P90LZ;port=3306;database=pyramiddemo;user=root;sslmode=1;usesystemtruststore=0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1ZjkzMjJjYy00NTc3LTQxNjMtYjIyYS1jYWIyMmQyMmEyZjEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Local-integrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
