@@ -1,0 +1,257 @@
+{
+	"name": "Copydata1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from `demo`"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"maxConcurrentConnections": 4
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ExtractID",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ExtractID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CompanyInitials",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CompanyInitials",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Rulesetpointer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Rulesetpointer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FormGroup",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FormGroup",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IssueDate",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "IssueDate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "StrategyType",
+									"type": "String"
+								},
+								"sink": {
+									"name": "StrategyType",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "StrategyName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "StrategyName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PolicyCount",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "PolicyCount",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "AccountValue",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "AccountValue",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "RecordTypeInd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RecordTypeInd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RateEffective",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "RateEffective",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CurrentPar",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CurrentPar",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MinimumPar",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MinimumPar",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CurrentCap",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CurrentCap",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MiniimumCap",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MiniimumCap",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CurrentSpread",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CurrentSpread",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MaximumSpread",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "MaximumSpread",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CurrentFixed",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "CurrentFixed",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "GuaranteedFixed",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "GuaranteedFixed",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "FeeInd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FeeInd",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "LocalMySqlTable",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDatalakestorage",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
